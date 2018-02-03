@@ -519,12 +519,9 @@ $this->addExternalJS(SITE_TEMPLATE_PATH."/js/bootstrap.tabs.min.js");
             }
             unset($useVoteRating, $useBrands);
             ?>
-            <?if(strlen($arResult['OFFERS'][0]['PROPERTIES']['LVL']['VALUE'])>0):?>
-                <div class="lvl"><?=$arResult['OFFERS'][0]['PROPERTIES']['LVL']['VALUE']?></div>
-            <?endif;?>
+
             <div class="item_title_product">
                 <div class="name-product ibws">
-
                     <div class="name-product fl"><? $APPLICATION->ShowTitle(false) ?></div>
                     <?if ($arResult['PROPERTIES']['NEWPRODUCT']['VALUE'] == 'да'):?>
                         <div class="new-product-block fl"></div>
@@ -532,14 +529,14 @@ $this->addExternalJS(SITE_TEMPLATE_PATH."/js/bootstrap.tabs.min.js");
                     <?endif;?>
                 </div>
 
-                <?/*<div class="ibws section-block">
+                <div class="ibws section-block">
                     <?php  $db_old_groups = CIBlockElement::GetElementGroups($arResult['ID'], false);
                     while($ar_group = $db_old_groups->Fetch()) {   ?>
                         <?if ($ar_group["NAME"] != 'Sale'):?>
                             <a href="<?echo $ar_group["SECTION_PAGE_URL"]; echo $ar_group["CODE"];?>/"><?= $ar_group["NAME"];?></a>
                         <?endif;?>
                     <?}?>
-                </div>*/?>
+                </div>
 
                 <div class="ibws">
                     <div class="top-title-text-tovar"><? echo $arResult['PREVIEW_TEXT']; ?></div>
@@ -567,9 +564,9 @@ $this->addExternalJS(SITE_TEMPLATE_PATH."/js/bootstrap.tabs.min.js");
                 <?/*if ($arParams['SHOW_OLD_PRICE'] == 'Y'){?>
                     <div class="item_economy_price" id="<? echo $arItemIDs['DISCOUNT_PRICE']; ?>" style="display: <? echo($boolDiscountShow ? '' : 'none'); ?>"><? echo($boolDiscountShow ? GetMessage('CT_BCE_CATALOG_ECONOMY_INFO', array('#ECONOMY#' => $minPrice['PRINT_DISCOUNT_DIFF'])) : ''); ?></div>
                 <?}*/?>
-                <?if($arResult['MIN_PRICE']['DISCOUNT_DIFF_PERCENT']>0):?>
-                <div class="sale-rec pr ttm">скидка <?=$arResult['MIN_PRICE']['DISCOUNT_DIFF_PERCENT']?>%</div>
-                <?endif;?>
+
+                <div class="sale-rec pr ttm"><? echo $MESS['MESS_BTN_COMPARE'];?> при покупке БОЛЕЕ двух упаковок </div>
+
             </div>
             <?
             unset($minPrice);
@@ -632,7 +629,7 @@ $this->addExternalJS(SITE_TEMPLATE_PATH."/js/bootstrap.tabs.min.js");
             {
                 $arSkuProps = array();
                 ?>
-                <div class="item_info_section" style="display: none; padding-right:150px;" id="<? echo $arItemIDs['PROP_DIV']; ?>">
+                <div class="item_info_section" style="padding-right:150px;" id="<? echo $arItemIDs['PROP_DIV']; ?>">
                     <?
                     foreach ($arResult['SKU_PROPS'] as &$arProp)
                     {
@@ -805,6 +802,7 @@ if ($showAddBtn)
 {
     ?>
     <a href="javascript:void(0);" class="bx_big bx_bt_button bx_cart" id="<? echo $arItemIDs['ADD_BASKET_LINK']; ?>"><span></span><? echo $addToBasketBtnMessage; ?></a>
+    <a class="action-cart" href="/personal/cart/"><?=GetMessage('CT_BCT_ACTION_CART')?></a>
     <?
 }
 ?>
@@ -868,7 +866,7 @@ if ($showAddBtn)
 {
     ?>
     <a href="javascript:void(0);" class="bx_big bx_bt_button bx_cart" id="<? echo $arItemIDs['ADD_BASKET_LINK']; ?>"><span></span><? echo $addToBasketBtnMessage; ?></a>
-    <a class="action-cart" href="/personal/cart/"><?=GetMessage('CT_BCT_ACTION_CART')?></a>
+
     <?
 }
 ?>

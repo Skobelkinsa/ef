@@ -251,7 +251,7 @@ canvas{    display:block;     vertical-align:bottom}
     color: #000;
     background: #ffcc01;
     border-radius: 3px;
-    right: 160px;
+    right: 195px;
     top: 35px;
     padding: 0 15px;
     line-height: 35px;
@@ -259,8 +259,24 @@ canvas{    display:block;     vertical-align:bottom}
 }
 .bx_medium a, .bx_catalog_item_title a, .item_buttons a{text-decoration:none !important;  color:#000 !important}
 .bx-basket-block a{font-size:16px;  color:#fc0;  margin-right:27px;  font-weight:bold;  display:table;  text-transform:uppercase}
-header .bx-basket-block{   font-size:16px;    line-height:17px;    padding-left:0;     padding-bottom:0}
-header .bx-basket-block a{   margin-right:70px}
+header .bx-basket-block:before{
+    content: '';
+    width: 33px;
+    height: 33px;
+    background-image: url("/upload/cart.svg");
+    background-position: center;
+    background-size: 100%;
+    position: absolute;
+    left: -45px;
+}
+header .bx-basket-block{
+    font-size: 15px;
+    line-height: 17px;
+    padding-left: 0;
+    padding-bottom: 0;
+    padding-top: 12px;
+}
+header .bx-basket-block a{   margin-right:70px; display: none}
 .auth-wrap-page .bx-system-auth-form{opacity:1;  width:60%;  position:static;  padding:0;  font-size:20px;  margin:0 auto}
 .auth-wrap-page .bx-system-auth-form input[type="text"], .auth-wrap-page .bx-system-auth-form input[type="password"]{width:100%}
 .bx-system-auth-form *, .bx-system-auth-form a{color:#000}

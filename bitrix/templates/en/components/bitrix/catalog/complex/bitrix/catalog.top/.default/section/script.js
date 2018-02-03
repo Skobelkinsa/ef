@@ -1253,6 +1253,7 @@ window.JCCatalogTopSection.prototype.CompareResult = function(result)
 	}
     //this.BasketRedirect();
 	//this.InitPopupWindow();
+
 	popupTitle = {
 		content: BX.create('div', {
 			style: { marginRight: '30px', whiteSpace: 'nowrap' },
@@ -1629,3 +1630,9 @@ window.JCCatalogTopSection.prototype.InitPopupWindow = function()
 	});
 };
 })(window);
+
+$(function () {
+	$('.bx_catalog_item_controls_blocktwo .buy_link').click(function () {
+		$(this).next('.action-cart').addClass('open');
+    });
+});

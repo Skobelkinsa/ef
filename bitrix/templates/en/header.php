@@ -139,6 +139,7 @@ if ($ipad || $iphone || $android || $palmpre || $ipod || $berry || $mobile || $s
             </a>
 
             <div class="bx_cart_login_top">
+                <a href="/porsonal/cart/">
                 <table>
                     <tr>
                         <td>
@@ -159,6 +160,7 @@ if ($ipad || $iphone || $android || $palmpre || $ipod || $berry || $mobile || $s
 
                     </tr>
                 </table>
+                </a>
             </div>
 
             <div class="pa head-phone-area">

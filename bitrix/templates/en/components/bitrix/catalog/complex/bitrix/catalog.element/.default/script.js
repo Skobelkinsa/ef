@@ -2827,3 +2827,9 @@ window.JCCatalogElement.prototype.allowViewedCount = function(update)
 		this.incViewedCounter();
 };
 })(window);
+
+$(function () {
+    $('.item_buttons .bx_bt_button').click(function () {
+        $(this).next('.action-cart').addClass('open');
+    });
+});
