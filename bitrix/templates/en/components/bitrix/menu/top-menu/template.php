@@ -13,7 +13,7 @@ foreach($arResult as $kay => $arItem):
         <?else:?>
             <li><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a></li>
         <?endif;
-    if($kay==3)
+    if($kay==4)
         echo "<li class='sub-menu'><a href='#'>".GetMessage("FAQ")."</a><ul class='sub'>";
     if($kay==end($arResult))
         echo "</ul></li>";
