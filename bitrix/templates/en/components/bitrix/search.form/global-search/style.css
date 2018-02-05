@@ -1,0 +1,14 @@
+.sear-block-global{
+    right: -4px;
+    top: 152px;
+    z-index: 5;
+}
+.icon-sear-block-global, .icon-sear-block-global svg{width:23px; height:23px; top: -2px; cursor:pointer; z-index:7}
+.sear-block-global input.search-suggest::placeholder{ color: #ffcc01}
+.sear-block-global input.search-suggest{ border:none;  padding:0 23px;  background:#2b2a29;  width:272px;  height:100%;  box-sizing:border-box; color: #fff}
+.sear-block-global input[type="submit"]{ width:40px;  height:100%;  box-sizing:border-box; opacity:0}
+.sear-block-global .search-form.actsh{ display:block;  -webkit-transform:scaleX(1);  transform:scaleX(1);  opacity:1}
+.sear-block-global .search-form{
+    z-index:1;  position:absolute;  top:-8px;  right:-9px;  height:35px;  background-color:#ebebeb;  width:272px}
+.pp-sear-fix .sear-block-global{right:115px; top:11px}
+.icon-sear-block-global svg path{fill: #ffcc01}

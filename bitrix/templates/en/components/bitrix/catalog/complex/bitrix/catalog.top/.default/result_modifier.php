@@ -489,4 +489,5 @@ if (!empty($arResult['ITEMS']))
 		}
 	}
 }
+$arResult['ORIGINAL_PARAMETERS'] = CIBlock::GetByID($arResult['ORIGINAL_PARAMETERS']['IBLOCK_ID'])->GetNext();
 ?>

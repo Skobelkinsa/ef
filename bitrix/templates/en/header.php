@@ -139,7 +139,7 @@ if ($ipad || $iphone || $android || $palmpre || $ipod || $berry || $mobile || $s
             </a>
 
             <div class="bx_cart_login_top">
-                <a href="/porsonal/cart/">
+                <a href="/personal/cart/">
                 <table>
                     <tr>
                         <td>

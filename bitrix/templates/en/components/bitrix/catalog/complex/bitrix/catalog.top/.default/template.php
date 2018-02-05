@@ -117,7 +117,10 @@ if (!empty($arResult['ITEMS']))
 			include($strFullPath.'/section/template.php');
 			break;
 	}
-?>
+    ?>
+    <div class="description">
+        <?=$arResult['ORIGINAL_PARAMETERS']['DESCRIPTION']?>
+    </div>
 <script type="text/javascript">
 BX.message({
 	MESS_BTN_BUY: '<? echo ('' != $arParams['MESS_BTN_BUY'] ? CUtil::JSEscape($arParams['MESS_BTN_BUY']) : GetMessageJS('CT_BCT_TPL_MESS_BTN_BUY')); ?>',

@@ -1,0 +1,39 @@
+header .menu li{
+    padding: 0 6.3% 0 0;
+}
+header .menu .sub-menu > a{
+    display: flex;
+    padding-left: 10px;
+    padding-right: 25px;
+    padding-top: 7px;
+    padding-bottom: 0;
+    background-image: url(/bitrix/templates/en/components/bitrix/menu/top-menu/images/sub.png);
+    background-repeat: no-repeat;
+    background-position: 50px 12px;
+}
+header .menu .sub-menu{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+    bottom: 6px;
+    padding: 0;
+    transition: all .5s;
+}
+header .menu .sub-menu:hover{
+    background-color: #ffcc01;
+}
+header .menu .sub-menu:hover .sub{
+    display: flex;
+}
+header .menu .sub{
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    padding: 15px 10px 10px;
+}
+header .menu .sub li{
+    line-height: 1.5;
+}
+header .menu .sub li a{}
