@@ -210,12 +210,12 @@
 <!-- end of Top100 code -->
 */?>
 
-
 <script src="<?=SITE_TEMPLATE_PATH?>/res/js/jquery.maskedinput.min.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/res/js/forma.js?v=1.0.1"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.cookie.js"></script>
 <script src="<?=SITE_TEMPLATE_PATH?>/js/script.js"></script>
 <script src="<?= SITE_TEMPLATE_PATH . "/js/bootstrap.modal.min.js"; ?>"></script>
-    <a class="scroll-top" id="scroll-top" href="#"></a>
+<a class="scroll-top" id="scroll-top" href="#"></a>
+<!--VK_637392-->
 </body>
 </html>

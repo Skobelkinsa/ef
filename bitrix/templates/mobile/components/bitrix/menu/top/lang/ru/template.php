@@ -6,3 +6,4 @@
  * Time: 13:39
  */
 $MESS["KOMPLEX"] = "Комплексы";
+$MESS['FAQ'] = "FAQ";
