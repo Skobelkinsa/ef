@@ -1,0 +1,136 @@
+.wrapper-nav{  height: 60px;  display:none;     background-color:#fff;     box-shadow:0 2px 2px 0 rgba(0,0,1,0.1);     position:fixed;     top:0;     width:100%;     z-index:30;     margin-top:-170px;     transition:margin .3s cubic-bezier(.73,0,.17,1.29)}
+@media (min-width:1024px){    .wrapper-nav{        display:block !important}    .wrapper-nav.visible{margin-top:0}}
+.nav-main{    width:960px;     margin:0 auto}
+.nav-main .logo{
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url(/bitrix/templates/en/img/logo.svg) no-repeat;
+    background-size: cover;
+    float: left;
+    margin: 15px 0;
+}
+.nav-main .nav-main__left{
+    margin: 0;
+    padding: 0;
+    float: left;
+    line-height: 2;
+    margin-left: 18px;
+    display: flex;
+    width: 70%;
+    height: 60px;
+    align-items: center;
+}
+.nav-main .nav-main__left li.separator {
+    margin: 0 1px;
+}
+.nav-main .nav-main__left li{
+    display: inline-block;
+    padding: 15px 0px;
+    font-weight: bold;
+    margin-right: 13px;
+}
+.nav-main .nav-main__left li a{font-size: 14px;display:inline-block;color:#000;text-decoration:none;     font-weight:700; transition: color .5s;}
+.nav-main .nav-main__left li a:hover, .nav-main ul li a:focus{    color:#858585}
+.nav-main__right .icon{    display:block;     background-image:url(images/sprite.png)}
+.nav-main__right{ margin:0; padding:0;display:block;  float:right;  margin:10px 0}
+.nav-main__right a{ margin:0 5px;  display:inline-block}
+.nav-main__right li{ position:relative;  display:inline-block;  padding:10px 0}
+.nav-main__right li+li a{ margin-left:10px}
+.nav-main__right .icon-phone{
+    background-position: top;
+    width: 27px;
+    height: 27px;
+    background-image: url(/bitrix/templates/en/img/phone.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 4px;
+    left: 20px;
+}
+.switch-phone.visible .icon-phone{
+    background-image: url(/bitrix/templates/en/img/phone_a.svg);
+}
+.wrapper-nav.visible .nav-main__right .phone-number{ display:none;  position:absolute;  background-color:#ffcc01;  font-size:18px;  font-weight:700;  text-decoration:none;  color:#000;  white-space:nowrap;  padding:4px 9px;  left:-50px;  top:59px}
+.wrapper-nav.visible .nav-main__right .switch-phone.visible .phone-number{ display:inline-block}
+.wrapper-nav.visible .nav-main__right .phone-number:before{ content:'';  position:absolute;  left:50%;  bottom:30px;  border:8px solid transparent;  border-bottom:12px solid #ffcc01}
+.nav-main__right .icon-personal{
+    background-position: top;
+    width: 27px;
+    height: 27px;
+    background-image: url(/bitrix/templates/en/img/personal.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    left: 10px;
+    bottom: 3px;
+}
+.nav-main__right .icon-cart{
+    background-position: top;
+    width: 27px;
+    height: 27px;
+    background-image: url(/bitrix/templates/en/img/basket.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 3px;
+}
+.nav-main__right .count-products{
+    background-color: #ffcc01;
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    color: #000;
+    font-size: 8px;
+    position: absolute;
+    top: 20px;
+    font-weight: bold;
+    left: -21px;
+    text-align: center;
+}
+.nav-main .nav-main__left li{
+    padding: 0 15px 0 0;
+    display: flex;
+}
+.nav-main .nav-main__left .sub-menu > a{
+    display: flex;
+    padding-left: 10px;
+    padding-right: 25px;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-image: url(/bitrix/templates/en/components/bitrix/menu/top-menu/images/sub.png);
+    background-repeat: no-repeat;
+    background-position:47px 10px;
+}
+.nav-main .nav-main__left .sub-menu{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+    padding: 0;
+    transition: all .5s;
+}
+.nav-main .nav-main__left .sub-menu:hover > a{
+    top: 4px;
+    position: relative;
+}
+.nav-main .nav-main__left .sub-menu:hover{
+    background-color: #ffcc01;
+    top: 48px;
+}
+.nav-main .nav-main__left .sub-menu:hover .sub{
+    display: flex;
+}
+.nav-main .nav-main__left .sub{
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    padding: 10px 10px 10px;
+}
+.nav-main .nav-main__left .sub li{
+    line-height: 1.5;
+}
+.nav-main .nav-main__left .sub li a{}
+

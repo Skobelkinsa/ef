@@ -15,10 +15,8 @@ foreach($arResult as $kay => $arItem):
         <?endif;
     if($kay==4)
         echo "<li class='sub-menu'><a href='#'>".GetMessage("FAQ")."</a><ul class='sub'>";
-    if($kay==end($arResult))
-        echo "</ul></li>";
     ?>
 <?endforeach?>
-
+    </ul></li>
 </ul> 
 <?endif?>

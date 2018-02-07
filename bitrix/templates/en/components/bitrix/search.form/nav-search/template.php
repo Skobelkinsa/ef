@@ -1,5 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die(); $this->setFrameMode(true);?>
-<div class="sear-block-global pa">
+<li class="sear-block-global pa">
 	<div class="pr">
 		<div class="icon-sear-block-global pr">
 		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 512 512" enable-background="new 0 0 512 512"><g>
@@ -11,4 +11,4 @@
 		    <input name="s" type="submit" value="<?=GetMessage("BSF_T_SEARCH_BUTTON");?>" />
 		</form>
 	</div>
-</div>
+</li>

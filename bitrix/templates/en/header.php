@@ -83,7 +83,7 @@ if ($ipad || $iphone || $android || $palmpre || $ipod || $berry || $mobile || $s
             ); ?>
 
             <ul class="nav-main__right pp-sear-fix pr">
-                <?$APPLICATION->IncludeComponent("bitrix:search.form", "global-search", Array(	"COMPONENT_TEMPLATE" => ".default","PAGE" => "#SITE_DIR#search/index.php","USE_SUGGEST" => "Y",	),false);?>
+                <?$APPLICATION->IncludeComponent("bitrix:search.form", "nav-search", Array(	"COMPONENT_TEMPLATE" => ".default","PAGE" => "#SITE_DIR#search/index.php","USE_SUGGEST" => "Y",	),false);?>
                 <li>
                     <a class="switch-phone" id="switch-phone" href="#" onclick="return false;">
                         <span class="icon icon-phone"></span>
