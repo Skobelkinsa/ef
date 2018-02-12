@@ -414,7 +414,10 @@ foreach ($arResult['ITEMS'] as $key => $arItem)
 <?echo ('' != $arParams['MESS_NOT_AVAILABLE'] ? $arParams['MESS_NOT_AVAILABLE'] : GetMessage('CT_BCT_TPL_MESS_PRODUCT_NOT_AVAILABLE'));?>
 		</span></div>
 		<div id="<? echo $arItemIDs['BASKET_ACTIONS']; ?>" class="bx_catalog_item_controls_blocktwo" style="display: <? echo ($canBuy ? '' : 'none'); ?>;">
-			<a id="<? echo $arItemIDs['BUY_LINK']; ?>" class="bx_bt_button bx_medium buy_link" href="javascript:void(0)" rel="nofollow">
+
+            <a class="bx_bt_button bx_medium buy_link" href="<? echo $arItem['DETAIL_PAGE_URL']; ?>" rel="nofollow"><?=GetMessage('CT_BCT_TPL_MESS_BTN_DETAIL')?></a>
+            <?/* add to ajax cart
+            <a id="<? echo $arItemIDs['BUY_LINK']; ?>" class="bx_bt_button bx_medium buy_link" href="javascript:void(0)" rel="nofollow">
                 <?
 			if ($arParams['ADD_TO_BASKET_ACTION'] == 'BUY')
 			{
@@ -425,7 +428,7 @@ foreach ($arResult['ITEMS'] as $key => $arItem)
 				echo ('' != $arParams['MESS_BTN_ADD_TO_BASKET'] ? $arParams['MESS_BTN_ADD_TO_BASKET'] : GetMessage('CT_BCT_TPL_MESS_BTN_ADD_TO_BASKET'));
 			}
 			?></a>
-            <a class="action-cart" href="/personal/cart/"><?=GetMessage('CT_BCT_ACTION_CART')?></a>
+            <a class="action-cart" href="/personal/cart/"><?=GetMessage('CT_BCT_ACTION_CART')?></a>*/?>
 		</div>
 <?
 if ($arParams['DISPLAY_COMPARE'])
