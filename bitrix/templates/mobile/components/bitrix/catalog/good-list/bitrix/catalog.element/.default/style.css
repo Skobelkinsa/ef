@@ -669,15 +669,82 @@
 .section-block {padding-top:5px}
 .section-block a {font-size:14px; color:#929292}
 
-
-
-
-
-
-
-
-
-
-
-
-
+.product .sales-banner {
+    color: #f26c4f;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.product .sales-banner .sale{
+    background-color: #f26c4f;
+    position: relative;
+    display: inline-block;
+    padding-left: 8px;
+    width: 45px;
+    height: 20px;
+    line-height: 20px;
+    text-align: left;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+}
+.product .sales-banner .sale:before {
+    content: "";
+    position: absolute;
+    border: 10px solid transparent;
+    border-right: 7px solid #fff;
+    right: 0;
+}
+.product .block.anoce{
+    padding-right: 30%;
+}
+.product .ajax-add-button.open{
+    height: 20px;
+    opacity: 1;
+    margin: 30px auto 15px;
+}
+.product .ajax-add-button{
+    height: 0;
+    transition: all .5s;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    opacity: 0;
+    display: block;
+}
+.product .addtocart .btn {
+    margin: 30px auto;
+}
+.product .block-detail .edge img{
+    margin: 0;
+}
+.product .block-detail .edge > *{
+    display: flex;
+    height: 30px;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 10px;
+    align-items: center;
+    padding-left: 25px;
+    margin: 0;
+}
+.product .block-detail .controls{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+.product .block-detail .onclick-btn{
+    margin: 30px auto 40px;
+}
+.product .block-detail .tabs>ul li{
+    padding: 10px 13px;
+}
+.product .block-detail .edge ruble:after{
+    font-size: 10px;
+}
+.product .block-detail .edge{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}

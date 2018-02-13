@@ -78,7 +78,10 @@ $(function () {
         var thiis = $(this);
         $.post(thiis.attr('action'), $(this).serialize(), function (data){
             if(data.error==0){
-                location="/m/personal/cart/";
+                $.get('/m/in/basket.php', function (e) {
+                    $('header .bx-basket').replaceWith(e);
+                    $('.product .ajax-add-button').addClass('open');
+                });
             }else{
                 alert('Товар не полежен в корзину!')
             }

@@ -1,69 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-$this->setFrameMode(true);
-/*$templateLibrary = array('popup');
-$currencyList = '';
-if (!empty($arResult['CURRENCIES']))
-{
-    $templateLibrary[] = 'currency';
-    $currencyList = CUtil::PhpToJSObject($arResult['CURRENCIES'], false, true, true);
-}
-$templateData = array(
-    //'TEMPLATE_THEME' => $this->GetFolder().'/themes/'.$arParams['TEMPLATE_THEME'].'/style.css',
-    'TEMPLATE_CLASS' => 'bx_'.$arParams['TEMPLATE_THEME'],
-    'TEMPLATE_LIBRARY' => $templateLibrary,
-    'CURRENCIES' => $currencyList
-);
-unset($currencyList, $templateLibrary);
-$strMainID = $this->GetEditAreaId($arResult['ID']);
-$arItemIDs = array(
-    'ID' => $strMainID,
-    'PICT' => $strMainID.'_pict',
-    'DISCOUNT_PICT_ID' => $strMainID.'_dsc_pict',
-    'STICKER_ID' => $strMainID.'_sticker',
-    'BIG_SLIDER_ID' => $strMainID.'_big_slider',
-    'BIG_IMG_CONT_ID' => $strMainID.'_bigimg_cont',
-    'SLIDER_CONT_ID' => $strMainID.'_slider_cont',
-    'SLIDER_LIST' => $strMainID.'_slider_list',
-    'SLIDER_LEFT' => $strMainID.'_slider_left',
-    'SLIDER_RIGHT' => $strMainID.'_slider_right',
-    'OLD_PRICE' => $strMainID.'_old_price',
-    'PRICE' => $strMainID.'_price',
-    'DISCOUNT_PRICE' => $strMainID.'_price_discount',
-    'SLIDER_CONT_OF_ID' => $strMainID.'_slider_cont_',
-    'SLIDER_LIST_OF_ID' => $strMainID.'_slider_list_',
-    'SLIDER_LEFT_OF_ID' => $strMainID.'_slider_left_',
-    'SLIDER_RIGHT_OF_ID' => $strMainID.'_slider_right_',
-    'QUANTITY' => $strMainID.'_quantity',
-    'QUANTITY_DOWN' => $strMainID.'_quant_down',
-    'QUANTITY_UP' => $strMainID.'_quant_up',
-    'QUANTITY_MEASURE' => $strMainID.'_quant_measure',
-    'QUANTITY_LIMIT' => $strMainID.'_quant_limit',
-    'BASIS_PRICE' => $strMainID.'_basis_price',
-    'BUY_LINK' => $strMainID.'_buy_link',
-    'ADD_BASKET_LINK' => $strMainID.'_add_basket_link',
-    'BASKET_ACTIONS' => $strMainID.'_basket_actions',
-    'NOT_AVAILABLE_MESS' => $strMainID.'_not_avail',
-    'COMPARE_LINK' => $strMainID.'_compare_link',
-    'PROP' => $strMainID.'_prop_',
-    'PROP_DIV' => $strMainID.'_skudiv',
-    'DISPLAY_PROP_DIV' => $strMainID.'_sku_prop',
-    'OFFER_GROUP' => $strMainID.'_set_group_',
-    'BASKET_PROP_DIV' => $strMainID.'_basket_prop',
-);
-$strObName = 'ob'.preg_replace("/[^a-zA-Z0-9_]/", "x", $strMainID);
-$templateData['JS_OBJ'] = $strObName;
-
-$strTitle = (
-isset($arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_TITLE"]) && $arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_TITLE"] != ''
-    ? $arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_TITLE"]
-    : $arResult['NAME']
-);
-$strAlt = (
-isset($arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_ALT"]) && $arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_ALT"] != ''
-    ? $arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_ALT"]
-    : $arResult['NAME']
-);*/
-?>
+$this->setFrameMode(true);?>
 <div class="content product bx_item_detail">
     <div class="title">
         <h1><? $APPLICATION->ShowTitle(false) ?></h1>
@@ -107,8 +43,15 @@ isset($arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_ALT"]) && $arRe
             <?endif;?>
             </div>
             <?if($arResult['PREVIEW_TEXT']):?>
-                <div class="block anoce"><? echo $arResult['PREVIEW_TEXT']; ?>
-                    <p class="sale-banner"><span class="sale"></span><?=GetMessage('SALE_TEXT')?></p>
+                <div class="block anoce">
+                    <? echo $arResult['PREVIEW_TEXT']; ?>
+                    <?if($arResult['OFFERS'][0]['PROPERTIES']['DOSAGE']):?>
+                    <p><b><?=$arResult['OFFERS'][0]['PROPERTIES']['DOSAGE']['NAME']?>:</b>
+                        <?foreach ($arResult['OFFERS'] as $kay => $arrOffers):?>
+                            <span<?if($kay==0):?> class="active"<?endif;?> data-sku-id="<?=$arrOffers['ID']?>"><?=$arrOffers['PROPERTIES']['DOSAGE']['VALUE']?></span>
+                        <?endforeach;?>
+                    </p>
+                    <?endif;?>
                 </div>
             <?endif;?>
             <?/*if($arResult['PROPERTIES']['SOSTAV']['VALUE']):?>
@@ -116,17 +59,9 @@ isset($arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_ALT"]) && $arRe
                     <b><?=$arResult['PROPERTIES']['SOSTAV']['NAME']?>:</b> <?=$arResult['PROPERTIES']['SOSTAV']['VALUE']?>
                 </div>
             <?endif;*/?>
-            <?if($arResult['OFFERS'][0]['PROPERTIES']['DOSAGE']):?>
-                <div class="block list">
-                    <b><?=$arResult['OFFERS'][0]['PROPERTIES']['DOSAGE']['NAME']?>:</b>
-                    <ul>
-                    <?foreach ($arResult['OFFERS'] as $kay => $arrOffers):?>
-                        <li<?if($kay==0):?> class="active"<?endif;?> data-sku-id="<?=$arrOffers['ID']?>"><?=$arrOffers['PROPERTIES']['DOSAGE']['VALUE']?></li>
-                    <?endforeach;?>
-                    </ul>
-                </div>
-            <?endif;?>
-            <div class="block">
+            <div class="block controls">
+                <p class="sales-banner"><span class="sale">-15%</span><?=GetMessage('SALE_TEXT')?></p>
+
                 <b>Количество, шт</b>:
                     <div class="count">
                         <button class="minus">-</button>
@@ -146,6 +81,7 @@ isset($arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_ALT"]) && $arRe
                     <?endif;?>
                     <input type="hidden" name="count" value="1">
                     <button class="btn" type="submit">В корзину</button>
+                    <span class="ajax-add-button">добавлено</span>
                 </form>
             </div>
             <div class="edge">
