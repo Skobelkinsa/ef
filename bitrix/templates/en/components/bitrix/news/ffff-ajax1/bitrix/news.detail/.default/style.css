@@ -1,0 +1,25 @@
+.ex-detail ul {    display: table; }
+.ex-detail * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.back-link{
+    text-decoration: none;
+    position: absolute;
+    top: 117px;
+    font-size: 16px;
+    color: #929292;
+}
+.ex-detail {color:#323232}
+.img-ex-detail, .prew-text-ex-detail {
+    width:50%;
+    padding-right: 20px;
+    padding-bottom: 15px;
+}
+
+.img-ex-detail img {width: 100%;height: auto}
+.wrapper .prew-text-ex-detail h1 {text-align:left;font-size:20px;font-weight: 500}
+.prew-text-ex-detail {font-size:17px;height:400px;}
+.prew-text-ex-detail p {padding: 25px 0;margin:0}
+.detail-text-ex-detail {    line-height: 36px;}
