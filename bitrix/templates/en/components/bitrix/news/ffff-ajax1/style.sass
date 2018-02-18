@@ -1,0 +1,119 @@
+.posts_block .blog .item:nth-child(3n+2)
+  margin-left: 0
+.blog
+  display: flex
+  .item
+    min-height: 364px !important
+    .description
+      min-height: 70px
+    .name
+      a
+        font-size: 19px
+    .date
+      font-size: 14px
+      color: #999
+    .item_splash
+      padding-top: 188px !important
+    .icons
+      display: flex
+      justify-content: space-between
+      font-size: 14px
+      color: #999
+  .scroll-block.fixed
+    width: 300px
+    top: 90px
+    position: fixed
+  &_filter
+    width: 300px
+    padding-bottom: 15px
+    position: relative
+    &-tags
+      .search-tags-cloud
+        padding-left: 20px
+      .search-tags-chain
+        margin-bottom: 15px
+        .tag-select
+          border-radius: 10px
+          display: inline-block
+          padding: 0 20px
+          background-color: #f3f3f3
+          &:hover
+            background-color: #e5e5e5
+        a
+          text-decoration: none
+    &-subscribe
+      .btn-subscribe
+        transition: background-color .5s
+        background-color: #ffcc01
+        font-size: 18px
+        text-transform: none
+        color: #000
+        height: 35px
+        padding: 0
+        &:hover
+          background-color: #fff001
+          color: #000
+        &:before
+          display: none
+      .btn-subscribe,
+      .bx-subscribe .bx-input-group .bx-form-control
+        width: 260px
+        display: block
+        margin: 15px auto
+    &-sort
+      display: flex
+      justify-content: space-between
+      margin-bottom: 15px
+      a
+        background-color: #f3f3f3
+        font-size: 18px
+        color: #000
+        text-decoration: none
+        padding: 0 15px
+        border-radius: 10px
+        &:hover
+          background-color: #e5e5e5
+        &.select
+          background-color: #ffcc01
+    &-title
+      padding: 15px 20px
+      font:
+        size: 20px
+        weight: bold
+    &-category
+      background-color: #f3f3f3
+      padding-bottom: 15px
+      ul
+        padding-left: 0
+        list-style: none
+      li
+        padding: 5px 20px
+        &.active
+          background-color: #ffcc01
+        &:hover
+          background-color: #e5e5e5
+      a
+        text-decoration: none
+        font-size: 18px
+  &_list
+    width: 650px
+    padding-left: 15px
+    .prod-desc
+      padding: 0
+    .show-more
+      text-align: center
+      font-size: 30px
+      width: 238px
+      display: block
+      background: #FFCC01
+      padding: 10px
+      top: 240px
+      cursor: pointer
+      margin: 5% auto 0
+      text-decoration: none
+      color: #000
+    .category
+      a
+        font-size: 14px
+        text-decoration: underline !important
+        color: #999
