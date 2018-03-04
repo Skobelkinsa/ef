@@ -1,0 +1,184 @@
+.posts_block .blog .item:nth-child(2n+2)
+  margin-right: 0 !important
+  margin-left: 0 !important
+.content>.title
+  margin-bottom: 0 !important
+.wrapper
+  padding: 0 10px !important
+.blog
+  display: flex
+  flex-direction: column
+  .item
+    width: 100%
+    margin-top: 30px
+    &:first-child
+      margin-top: 0
+    &:hover
+      .item_splash
+        .name
+          background: transparent !important
+          a
+            color: #ffcc01 !important
+    .item_splash
+      margin: 15px 0
+    .category
+      margin: 10px 0
+    .description
+      margin-bottom: 10px
+    .name
+      a
+        font-size: 19px
+    .date
+      font-size: 14px
+      color: #999
+    .icons
+      display: flex
+      justify-content: space-between
+      font-size: 14px
+      color: #999
+  .scroll-block.fixed
+    width: 100%
+    top: 90px
+    position: fixed
+  &_filter
+    width: 100%
+    padding-bottom: 15px
+    position: relative
+    &-tags
+      background-color: #ccc
+      .search-tags-cloud
+        padding: 0 15px 15px
+        a
+          display: inline-flex
+          margin-right: 15px
+          text-decoration: underline
+      .search-tags-chain
+        margin-bottom: 15px
+        .tag-select
+          border-radius: 10px
+          display: inline-block
+          padding: 0 20px
+          background-color: #ebebeb
+          margin: 15px
+        a
+          text-decoration: none
+    &-subscribe, .subscribe
+      display: none
+      .btn-subscribe
+        transition: background-color .5s
+        background-color: #ffcc01
+        font-size: 18px
+        text-transform: none
+        color: #000
+        height: 35px
+        padding: 0
+        &:hover
+          background-color: #fff001
+          color: #000
+        &:before
+          display: none
+      .btn-subscribe,
+      .bx-subscribe .bx-input-group .bx-form-control
+        width: 100%
+        display: block
+        margin: 15px auto
+    &-sort
+      display: flex
+      justify-content: space-between
+      margin-top: 15px
+      padding: 0 10px
+      a
+        background-color: #f3f3f3
+        font-size: 16px
+        color: #000
+        text-decoration: none
+        padding: 0 15px
+        border-radius: 10px
+        &:hover
+          background-color: #e5e5e5
+        &.select
+          background-color: #ffcc01
+    &-title
+      text-align: center
+      padding: 15px 20px
+      font:
+        size: 18px
+      position: relative
+      &:before
+        content: "+"
+        position: absolute
+        right: 15px
+        font-size: 30px
+        line-height: .8
+        font-weight: 100
+      &.active
+        &+div
+          display: block
+        &:before
+          content: "\2013"
+      &+div
+        display: none
+    &-category
+      background-color: #ebebeb
+      .catalog-section-list
+        padding-bottom: 15px
+      ul
+        padding-left: 0
+        list-style: none
+      li
+        padding: 5px 20px
+        &.active
+          background-color: #ffcc01
+        &:hover
+          background-color: #e5e5e5
+      a
+        text-decoration: none
+        font-size: 16px
+  &_list
+    width: 100%
+    .prod-desc
+      padding: 0
+    .subscribe
+      border-top: 2px solid #ebebeb
+      margin: 45px 0
+      padding-top: 45px
+      &-title
+        text-align: center
+        font-size: 20px
+        font-weight: bold
+      .bx-form-control
+        width: calc(100% - 30px) !important
+        background-color: #f3f3f3
+        border: 0
+        height: 50px
+        border-radius: 2px
+        margin: 20px auto !important
+        font-size: 18px
+        padding: 0 15px !important
+        ::placeholder
+          color: #999999
+      .btn-subscribe
+        transition: background-color 0.5s
+        background-color: #fff
+        border: 2px solid #ffcc01
+        font-size: 18px
+        text-transform: none
+        color: #000
+        height: 35px
+        padding: 0 15px
+        width: auto !important
+        &:hover
+          background-color: #ffcc01
+          color: #000
+        &:before
+          display: none
+      .btn-subscribe,
+      .bx-subscribe .bx-input-group .bx-form-control
+        width: 100%
+        display: block
+        margin: 15px auto
+    .category
+      a
+        font-size: 14px
+        text-decoration: underline !important
+        color: #999

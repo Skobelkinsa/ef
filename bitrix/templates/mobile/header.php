@@ -23,8 +23,7 @@
 
     </head>
 <body>
-
-<div class="panel"><? $APPLICATION->ShowPanel();?></div>
+<?if ($USER->IsAdmin()):?><div class="panel"><? $APPLICATION->ShowPanel();?></div><?endif;?>
 <?global $USER; ?>
     <header<?if ($USER->IsAdmin()):?>  style="margin-top: 39px"<?endif;?>>
         <div class="wrapper">
