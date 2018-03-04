@@ -419,8 +419,13 @@ $this->addExternalJS(SITE_TEMPLATE_PATH."/js/bootstrap.tabs.min.js");
                     <script type="text/javascript" src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js" charset="utf-8"></script>
                     <script type="text/javascript" src="//yastatic.net/share2/share.js" charset="utf-8"></script>
                     <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,viber,whatsapp"></div>
+                    <?php if($arResult['PROPERTIES']['LEFT']['VALUE'] != '') {?>
+                        <div class="left-block">
+                            <?=htmlspecialcharsBack($arResult['PROPERTIES']['LEFT']['~VALUE']['TEXT'])?>
+                        </div>
+                    <?php } ?>
                     <?
-                    if ('Y' == $arParams['USE_COMMENTS'])
+                    /*if ('Y' == $arParams['USE_COMMENTS'])
                     {
                         ?>
                         <?$APPLICATION->IncludeComponent(
@@ -460,7 +465,7 @@ $this->addExternalJS(SITE_TEMPLATE_PATH."/js/bootstrap.tabs.min.js");
                         array("HIDE_ICONS" => "Y")
                     );?>
                         <?
-                    }
+                    }*/
                     ?>
                 </div>
             </div>
@@ -521,6 +526,7 @@ $this->addExternalJS(SITE_TEMPLATE_PATH."/js/bootstrap.tabs.min.js");
             ?>
 
             <div class="item_title_product">
+                <div class="item_title_head">
                 <div class="name-product ibws">
                     <div class="name-product fl"><? $APPLICATION->ShowTitle(false) ?></div>
                     <?if ($arResult['PROPERTIES']['NEWPRODUCT']['VALUE'] == 'да'):?>
@@ -528,7 +534,31 @@ $this->addExternalJS(SITE_TEMPLATE_PATH."/js/bootstrap.tabs.min.js");
                         <div style="clear: both;"></div>
                     <?endif;?>
                 </div>
+                <div class="item_price ibws">
 
+                    <?
+                    $minPrice = (isset($arResult['RATIO_PRICE']) ? $arResult['RATIO_PRICE'] : $arResult['MIN_PRICE']);
+                    $boolDiscountShow = (0 < $minPrice['DISCOUNT_DIFF']);
+                    ?>
+
+
+
+                    <div class="item_current_price" id="<? echo $arItemIDs['PRICE']; ?>">
+                        <? echo $minPrice['PRINT_DISCOUNT_VALUE']; ?>
+                    </div>
+                    <?if ($arParams['SHOW_OLD_PRICE'] == 'Y'){ ?>
+                        <div class="item_old_price" id="<? echo $arItemIDs['OLD_PRICE']; ?>" style="display: <? echo($boolDiscountShow ? '' : 'none'); ?>">
+                            <? echo($boolDiscountShow ? $minPrice['PRINT_VALUE'] : ''); ?>
+                        </div>
+                    <?}?>
+                    <?/*if ($arParams['SHOW_OLD_PRICE'] == 'Y'){?>
+                    <div class="item_economy_price" id="<? echo $arItemIDs['DISCOUNT_PRICE']; ?>" style="display: <? echo($boolDiscountShow ? '' : 'none'); ?>"><? echo($boolDiscountShow ? GetMessage('CT_BCE_CATALOG_ECONOMY_INFO', array('#ECONOMY#' => $minPrice['PRINT_DISCOUNT_DIFF'])) : ''); ?></div>
+                <?}*/?>
+
+
+
+                </div>
+                </div>
                 <div class="ibws section-block">
                     <?php  $db_old_groups = CIBlockElement::GetElementGroups($arResult['ID'], false);
                     while($ar_group = $db_old_groups->Fetch()) {   ?>
@@ -541,33 +571,10 @@ $this->addExternalJS(SITE_TEMPLATE_PATH."/js/bootstrap.tabs.min.js");
                 <div class="ibws">
                     <div class="top-title-text-tovar"><? echo $arResult['PREVIEW_TEXT']; ?></div>
                 </div>
-
-            </div>
-
-            <div class="item_price ibws">
-
-                <?
-                $minPrice = (isset($arResult['RATIO_PRICE']) ? $arResult['RATIO_PRICE'] : $arResult['MIN_PRICE']);
-                $boolDiscountShow = (0 < $minPrice['DISCOUNT_DIFF']);
-                ?>
-
-
-
-                <div class="item_current_price" id="<? echo $arItemIDs['PRICE']; ?>">
-                    <? echo $minPrice['PRINT_DISCOUNT_VALUE']; ?>
-                </div>
-                <?if ($arParams['SHOW_OLD_PRICE'] == 'Y'){ ?>
-                    <div class="item_old_price" id="<? echo $arItemIDs['OLD_PRICE']; ?>" style="display: <? echo($boolDiscountShow ? '' : 'none'); ?>">
-                        <? echo($boolDiscountShow ? $minPrice['PRINT_VALUE'] : ''); ?>
-                    </div>
-                <?}?>
-                <?/*if ($arParams['SHOW_OLD_PRICE'] == 'Y'){?>
-                    <div class="item_economy_price" id="<? echo $arItemIDs['DISCOUNT_PRICE']; ?>" style="display: <? echo($boolDiscountShow ? '' : 'none'); ?>"><? echo($boolDiscountShow ? GetMessage('CT_BCE_CATALOG_ECONOMY_INFO', array('#ECONOMY#' => $minPrice['PRINT_DISCOUNT_DIFF'])) : ''); ?></div>
-                <?}*/?>
-
                 <div class="sale-rec pr ttm"><? echo $MESS['MESS_BTN_COMPARE'];?> при покупке БОЛЕЕ двух упаковок </div>
-
             </div>
+
+
             <?
             unset($minPrice);
            /* if (!empty($arResult['DISPLAY_PROPERTIES']) || $arResult['SHOW_OFFERS_PROPS'])
@@ -659,7 +666,7 @@ $this->addExternalJS(SITE_TEMPLATE_PATH."/js/bootstrap.tabs.min.js");
                             ?>
                             <div class="ibws">
                                 <div class="<? echo $strClass; ?> ibws" id="<? echo $arItemIDs['PROP'].$arProp['ID']; ?>_cont">
-                                    <span class="doz-prop fl"><? echo htmlspecialcharsex($arProp['NAME']); ?></span>
+                                    <span class="doz-prop fl"><? echo htmlspecialcharsex($arProp['NAME']); ?>:</span>
                                     <div class="bx_size_scroller_container fl"><div class="bx_size">
                                             <ul id="<? echo $arItemIDs['PROP'].$arProp['ID']; ?>_list" style="width: <? echo $strWidth; ?>;margin-left:0%;">
                                                 <?
@@ -699,7 +706,7 @@ $this->addExternalJS(SITE_TEMPLATE_PATH."/js/bootstrap.tabs.min.js");
                             }
                             ?>
                             <div class="<? echo $strClass; ?>" id="<? echo $arItemIDs['PROP'].$arProp['ID']; ?>_cont">
-                                <span class="bx_item_section_name_gray"><? echo htmlspecialcharsex($arProp['NAME']); ?></span>
+                                <span class="bx_item_section_name_gray"><? echo htmlspecialcharsex($arProp['NAME']); ?>:</span>
                                 <div class="bx_scu_scroller_container"><div class="bx_scu">
                                         <ul id="<? echo $arItemIDs['PROP'].$arProp['ID']; ?>_list" style="width: <? echo $strWidth; ?>;margin-left:0%;">
                                             <?
@@ -762,7 +769,7 @@ $this->addExternalJS(SITE_TEMPLATE_PATH."/js/bootstrap.tabs.min.js");
                         <?
                     }
                     ?>
-                    <span class="col-v fl"><? echo GetMessage('CATALOG_QUANTITY'); ?></span>
+                    <span class="col-v fl"><? echo GetMessage('CATALOG_QUANTITY'); ?>:</span>
                     <div class="item_buttons vam">
 		<span class="item_buttons_counter_block">
 			<a href="javascript:void(0)" class="bx_bt_button_type_2 bx_small bx_fwb" id="<? echo $arItemIDs['QUANTITY_DOWN']; ?>">-</a>
@@ -923,8 +930,10 @@ if ($showAddBtn)
 
             <? if( !isset($_GET["r1"]) && $_GET["r1"] != "yandext"): ?>
                 <div class="ibws">
-                    <div class="by-one-klick prod-cl-2">  <span>Купить в 1 клик</span>
-                        <div class="black-bg" style="display:none"></div>
+                    <div class="by-one-klick prod-cl-2">
+                        <img src="<?=$this->GetFolder()?>/images/click.svg" width="30px" height="30px" alt="">
+                        <span>Купить в 1 клик</span>
+                        <!--<div class="black-bg" style="display:none"></div>-->
                         <div class="pr">
                             <form action="<?=SITE_TEMPLATE_PATH?>/mail.php" class="by-one-klick-form contact-form form-prod-cl-2">
                                 <div class="btn-closed-form"></div>
@@ -989,7 +998,14 @@ if ($showAddBtn)
                                     ?><p><? echo $arResult['DETAIL_TEXT']; ?></p><?
                                 }
 
+
                                 ?>
+                                <?php if($arResult['PROPERTIES']['BLOG']['VALUE'] != ''):?>
+                                    <!--<p><b><?/*=GetMessage('BLOG_TITLE')*/?></b></p>-->
+                                    <?foreach($arResult['PROPERTIES']['BLOG']['VALUE'] as $el_blog):?>
+                                        <a href="/news/<?=$el_blog["DETAIL_PAGE_URL"]?>"><b><?=GetMessage('MORE_BLOG')?> <?=$el_blog["NAME"]?></b></a>
+                                    <?endforeach;?>
+                                <?endif;?>
                             </div>
                             <?php if($arResult['PROPERTIES']['SOSTAV']['VALUE'] != '') {?>
                                 <div role="tabpanel" class="tab-pane" id="sostav">
@@ -1045,7 +1061,20 @@ if ($showAddBtn)
             <div class="clb"></div>
         </div>
 
+        <div style="clear:both"></div>
         <div class="bx_md">
+            <div class="blog_reviews">
+                <h3><?=GetMessage('BLOG')?></h3>
+                <div class="blog_reviews_items">
+                <?foreach($arResult['BLOG_RAND_ITEMS'] as $item):?>
+                    <a href="<?=$item["URL"]?>" class="blog_reviews_item col-md-3">
+                        <img src="<?=$item["IMG"]?>" alt="<?=$item["NAME"]?>">
+                        <div class="title"><?=$item["NAME"]?></div>
+                        <div class="description"><?=$item["PREVIEW_TEXT"]?></div>
+                    </a>
+                <?endforeach;?>
+                </div>
+            </div>
             <div class="item_info_section">
                 <?
                 if (isset($arResult['OFFERS']) && !empty($arResult['OFFERS']))

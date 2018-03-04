@@ -98,4 +98,6 @@
 .prew-text-ex-detail {font-size:17px;height:400px;}
 .prew-text-ex-detail p {padding: 25px 0;margin:0}
 .detail-text-ex-detail {    line-height: 36px;}
-.wrapper h1 {display: none}
+.wrapper h1,
+.bx_pagination_bottom
+{display: none}

@@ -24,3 +24,4 @@ $this->addExternalCss($this->GetFolder().'/themes/'.$arParams['TEMPLATE_THEME'].
     <?//printr($arItem['SHOW_COUNTER']);?>
 </div>
 <?endforeach;?>
+    <br /><?=$arResult["NAV_STRING"]?>

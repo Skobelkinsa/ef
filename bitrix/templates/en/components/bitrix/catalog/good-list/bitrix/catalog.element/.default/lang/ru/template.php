@@ -33,4 +33,7 @@ $MESS["CT_BCE_CATALOG_MESS_COMPARE_TITLE"] = "Сравнение товаров"
 $MESS["CT_BCE_CATALOG_MESS_COMPARE_UNKNOWN_ERROR"] = "При добавлении товара в список сравнения произошла ошибка";
 $MESS["CT_BCE_CATALOG_BTN_MESSAGE_COMPARE_REDIRECT"] = "Перейти в список сравнения";
 $MESS["CT_BCT_ACTION_CART"] = "Добавлено";
+$MESS["BLOG_TITLE"] = "Рекомендуем прочитать:";
+$MESS["MORE_BLOG"] = "Полное описание";
+$MESS["BLOG"] = "Статьи";
 ?>

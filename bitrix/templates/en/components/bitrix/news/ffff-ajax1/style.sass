@@ -1,9 +1,18 @@
+.posts_block .blog .item:nth-child(2n+2)
+  margin-right: 0 !important
+  margin-left: 0 !important
 .posts_block .blog .item:nth-child(3n+2)
-  margin-left: 0
 .blog
   display: flex
   .item
     min-height: 364px !important
+    margin: 0 42px 10px -1px !important
+    &:hover
+      .item_splash
+        .name
+          background: transparent !important
+          a
+            color: #ffcc01 !important
     .description
       min-height: 70px
     .name
@@ -20,11 +29,11 @@
       font-size: 14px
       color: #999
   .scroll-block.fixed
-    width: 300px
+    width: 250px
     top: 90px
     position: fixed
   &_filter
-    width: 300px
+    width: 250px
     padding-bottom: 15px
     position: relative
     &-tags
@@ -57,7 +66,7 @@
           display: none
       .btn-subscribe,
       .bx-subscribe .bx-input-group .bx-form-control
-        width: 260px
+        width: 100%
         display: block
         margin: 15px auto
     &-sort
@@ -66,7 +75,7 @@
       margin-bottom: 15px
       a
         background-color: #f3f3f3
-        font-size: 18px
+        font-size: 16px
         color: #000
         text-decoration: none
         padding: 0 15px
@@ -78,7 +87,7 @@
     &-title
       padding: 15px 20px
       font:
-        size: 20px
+        size: 18px
         weight: bold
     &-category
       background-color: #f3f3f3
@@ -94,10 +103,10 @@
           background-color: #e5e5e5
       a
         text-decoration: none
-        font-size: 18px
+        font-size: 16px
   &_list
-    width: 650px
-    padding-left: 15px
+    width: 690px
+    padding-left: 42px
     .prod-desc
       padding: 0
     .show-more

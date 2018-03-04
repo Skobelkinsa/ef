@@ -110,7 +110,14 @@ $this->setFrameMode(true);?>
                 </ul>
                 <div class="tabs-list">
                     <?if($arResult['DETAIL_TEXT']):?>
-                        <div id="detail"><?=$arResult['DETAIL_TEXT']?></div>
+                        <div id="detail"><?=$arResult['DETAIL_TEXT']?>
+                            <?php if($arResult['PROPERTIES']['BLOG']['VALUE'] != ''):?>
+                                <!--<p><b><?/*=GetMessage('BLOG_TITLE')*/?></b></p>-->
+                                <?foreach($arResult['PROPERTIES']['BLOG']['VALUE'] as $el_blog):?>
+                                    <a href="/news/<?=$el_blog["DETAIL_PAGE_URL"]?>"><b><?=GetMessage('MORE_BLOG')?> <?=$el_blog["NAME"]?></b></a>
+                                <?endforeach;?>
+                            <?endif;?>
+                        </div>
                     <?endif;?>
                     <?if($arResult['PROPERTIES']['INSTRUCTION']['VALUE']['TEXT']):?>
                         <div id="instr" style="display:none"><?=$arResult['PROPERTIES']['INSTRUCTION']['VALUE']['TEXT']?></div>

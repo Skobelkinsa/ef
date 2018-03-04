@@ -1,0 +1,146 @@
+.order-auth .order_reg_form,
+.order-auth .bx-system-auth-form
+{
+    width: 300px;
+    margin: 0 auto;
+}
+#order_form_div .order-auth .sale_order_full_table input[type="text"],
+#order_form_div .order-auth .sale_order_full_table input[type="password"] {
+    height: 50px;
+    width: 100%;
+}
+#order_form_div .order-auth .sale_order_full_table input[type="submit"] {
+    color: #000;
+    background: #ffcc01;
+    border-radius: 3px;
+    font-size: 24px;
+    padding: 12px 40px;
+    cursor: pointer;
+    border: none;
+    font-family: 'PT Sans',sans-serif;
+    margin: 50px auto 0;
+    display: block;
+}
+#order_form_div .order-auth .sale_order_full_table label{
+    font-size: 16px;
+    margin-left: 15px;
+    color: #000;
+    margin-top: 20px;
+    display: block;
+    margin-bottom: 10px;
+}
+.order-auth .sale_order_full_table {
+    margin-top: 50px;
+}
+#order_form_div .sale_data-table.summary td {
+    background: #fff !important;
+}
+#order_form_div {
+    font-size: 12px;
+    color: #000;
+}
+#order_form_div .sof-req {
+    color: red;
+    font-size: 10px;
+}
+#order_form_div .clear {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    font-size: 0px;
+    line-height: 0px;
+}
+#order_form_div input[type="text"],
+#order_form_div input[type="password"],
+#order_form_div textarea,
+#order_form_div select{
+    height: 30px;
+    border: none;
+    box-shadow: none;
+    color: #000;
+    text-align: left;
+    font-size: 16px;
+    vertical-align: middle;
+    width: 240px;
+    outline: none !important;
+    background: #ebebeb;
+    margin-right: 20px;
+    padding:0 10px;
+}
+#order_form_div .title {
+    font-weight: bold;
+    font-size: 15px;
+    border-bottom: 1px solid #dcdfe2;
+    width: 100%;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+#order_form_div .title a {
+    color: #2d739d;
+    font-size: 12px;
+    text-decoration: underline;
+    margin-left: 10px;
+    outline: none;
+}
+#order_form_div .title a:hover {
+    text-decoration: none;
+}
+#order_form_div .label.left {
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+#order_form_div label {
+    display: inherit;
+    color: #969696;
+    font-size: 16px;
+}
+
+#order_form_div .sale_order_table {
+    font-size: 12px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+#order_form_div .sale_order_table td {
+    padding: 15px 0;
+    background: none !important;
+}
+#order_form_div .sale_order_table .name {
+    width: 190px;
+    text-align: left;
+    vertical-align: top;
+}
+#order_form_div .sale_order_table.props td {
+    border-bottom: 1px solid #dcdfe2;
+}
+#order_form_div .sale_order_table input[type="text"],
+#order_form_div .sale_order_table textarea,
+#order_form_div .sale_order_table select{
+    width: 365px;
+}
+#order_form_div .sale_order_table textarea {
+    height: 70px;
+    overflow: hidden;
+    resize: none;
+}
+#order_form_div .sale_order_table select {
+    padding: 6px 3px 6px 8px;
+    width: 383px;
+    margin-bottom: 5px;
+}
+#order_form_div .sale_order_table .desc {
+    color: #a3a3a3;
+    font-size: 11px;
+    margin: 3px 0;
+}
+.order-auth  {margin-top: 50px}
+.order-auth td p {
+    width: 300px;
+    margin: 0 auto;
+}
+#order_form_div .auth-table label.rememberme {
+    display: block !important;
+}

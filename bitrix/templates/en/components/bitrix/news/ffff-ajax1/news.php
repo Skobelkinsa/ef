@@ -20,43 +20,46 @@ $this->addExternalJS($this->GetFolder().'/tether.min.js');
         $APPLICATION->AddHeadString('<link rel="alternate" type="application/rss+xml" title="'.$arResult["FOLDER"].$arResult["URL_TEMPLATES"]["rss"].'" href="'.$arResult["FOLDER"].$arResult["URL_TEMPLATES"]["rss"].'" />');
     ?>
 <?endif?>
-<?$newsCounter = CIBlockElement::GetList(Array(), Array("IBLOCK_ID" => 1, "ACTIVE" => "Y"), Array());?>
+<?
+$arParams["FILTER_NAME"] = "arFilter";
+if(isset($arResult['VARIABLES']['SECTION_CODE'])):
+    $arFilter = Array('IBLOCK_ID'=>$arParams["IBLOCK_ID"], 'CODE'=>$arResult['VARIABLES']['SECTION_CODE']);
+    $db_list = CIBlockSection::GetList(Array(), $arFilter, true);
+    if($arSection = $db_list->GetNext()){
+        $arSelectSection = $arSection['ID'];
+        $GLOBALS['arFilter'] = array(
+            'SECTION_ID' => $arSection['ID']
+        );
+    }
+endif;
+if(isset($_GET['tags'])):
+    $GLOBALS['arFilter'] = array(
+        'TAGS' => '%'.$_GET["tags"].'%'
+    );
+endif;
+if(isset($_GET['sort'])):
+    $arParams["SORT_ORDER1"] = "DESC";
+    if($_GET['sort']=='popular'):
+        $arParams["SORT_BY1"] = "SHOW_COUNTER";
+    elseif($_GET['sort']=='new'):
+        $arParams["SORT_BY1"] = "DATE_CREATE";
+    else:
+        $arParams["SORT_BY1"] = "SORT";
+    endif;
+endif;
+
+$newsCounter = CIBlockElement::GetList(Array(), Array("IBLOCK_ID" => 1, "ACTIVE" => "Y", "SECTION_ID"=>$arSelectSection), Array());?>
 
 
 <div id="new-ajax-list" class="bx-newslist posts_block" data-count="<?=$newsCounter?>">
     <?if($_GET["ajaxnew"]!="Y"):
-        $arParams["FILTER_NAME"] = "arFilter";
-        if(isset($arResult['VARIABLES']['SECTION_CODE'])):
-            $arFilter = Array('IBLOCK_ID'=>$arParams["IBLOCK_ID"], 'CODE'=>$arResult['VARIABLES']['SECTION_CODE']);
-            $db_list = CIBlockSection::GetList(Array(), $arFilter, true);
-            if($arSection = $db_list->GetNext()){
-                $arSelectSection = $arSection['ID'];
-                $GLOBALS['arFilter'] = array(
-                    'SECTION_ID' => $arSection['ID']
-                );
-            }
-        endif;
-        if(isset($_GET['tags'])):
-            $GLOBALS['arFilter'] = array(
-                'TAGS' => '%'.$_GET["tags"].'%'
-            );
-        endif;
-        if(isset($_GET['sort'])):
-            $arParams["SORT_ORDER1"] = "DESC";
-            if($_GET['sort']=='popular'):
-                $arParams["SORT_BY1"] = "SHOW_COUNTER";
-            elseif($_GET['sort']=='new'):
-                $arParams["SORT_BY1"] = "DATE_CREATE";
-            else:
-                $arParams["SORT_BY1"] = "SORT";
-            endif;
-        endif;
+
         ?>
         <div class="blog">
             <div class="blog_filter">
                 <div class="scroll-block">
                     <div class="blog_filter-sort">
-                        <a href="?sort=all"<?if($_GET['sort']=='all' || !isset($_GET['sort'])):?> class="select"<?endif;?>><?=GetMessage('SORT_ALL')?></a>
+                        <a href="<?=$arResult['FOLDER']?>?sort=all"<?if($_GET['sort']=='all' || !isset($_GET['sort'])):?> class="select"<?endif;?>><?=GetMessage('SORT_ALL')?></a>
                         <a href="?sort=popular"<?if($_GET['sort']=='popular'):?> class="select"<?endif;?>><?=GetMessage('SORT_POP')?></a>
                         <a href="?sort=new"<?if($_GET['sort']=='new'):?> class="select"<?endif;?>><?=GetMessage('SORT_NEW')?></a>
                     </div>
@@ -88,8 +91,8 @@ $this->addExternalJS($this->GetFolder().'/tether.min.js');
                     <div class="blog_filter-tags">
                         <div class="blog_filter-title"><?=GetMessage('TAG_TITLE')?></div>
                         <?$APPLICATION->IncludeComponent("bitrix:search.tags.cloud",".default",Array(
-                                "FONT_MAX" => "18",
-                                "FONT_MIN" => "18",
+                                "FONT_MAX" => "16",
+                                "FONT_MIN" => "16",
                                 "COLOR_NEW" => "000",
                                 "COLOR_OLD" => "000",
                                 "PERIOD_NEW_TAGS" => "",
@@ -215,9 +218,9 @@ $this->addExternalJS($this->GetFolder().'/tether.min.js');
                     ),
                     $component
                 );?>
-                <div class="ibws">
-                    <a class="show-more" href="#"><?=GetMessage('SHOW_ALL')?></a>
-                </div>
+                <!--<div class="ibws">
+                    <a class="show-more" data-section="<?/*=$arSelectSection*/?>" href="#"><?/*=GetMessage('SHOW_ALL')*/?></a>
+                </div>-->
                 <div class="prod-desc">
                    <?=$arResult['DESCRIPTION']?>
                 </div>

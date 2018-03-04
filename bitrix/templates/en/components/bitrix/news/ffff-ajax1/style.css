@@ -1,10 +1,16 @@
-.posts_block .blog .item:nth-child(3n+2) {
-  margin-left: 0; }
+.posts_block .blog .item:nth-child(2n+2) {
+  margin-right: 0 !important;
+  margin-left: 0 !important; }
 
 .blog {
   display: flex; }
   .blog .item {
-    min-height: 364px !important; }
+    min-height: 364px !important;
+    margin: 0 42px 10px -1px !important; }
+    .blog .item:hover .item_splash .name {
+      background: transparent !important; }
+      .blog .item:hover .item_splash .name a {
+        color: #ffcc01 !important; }
     .blog .item .description {
       min-height: 70px; }
     .blog .item .name a {
@@ -20,11 +26,11 @@
       font-size: 14px;
       color: #999; }
   .blog .scroll-block.fixed {
-    width: 300px;
+    width: 250px;
     top: 90px;
     position: fixed; }
   .blog_filter {
-    width: 300px;
+    width: 250px;
     padding-bottom: 15px;
     position: relative; }
     .blog_filter-tags .search-tags-cloud {
@@ -55,7 +61,7 @@
         display: none; }
     .blog_filter-subscribe .btn-subscribe,
     .blog_filter-subscribe .bx-subscribe .bx-input-group .bx-form-control {
-      width: 260px;
+      width: 100%;
       display: block;
       margin: 15px auto; }
     .blog_filter-sort {
@@ -64,7 +70,7 @@
       margin-bottom: 15px; }
       .blog_filter-sort a {
         background-color: #f3f3f3;
-        font-size: 18px;
+        font-size: 16px;
         color: #000;
         text-decoration: none;
         padding: 0 15px;
@@ -75,7 +81,7 @@
           background-color: #ffcc01; }
     .blog_filter-title {
       padding: 15px 20px;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold; }
     .blog_filter-category {
       background-color: #f3f3f3;
@@ -91,10 +97,10 @@
           background-color: #e5e5e5; }
       .blog_filter-category a {
         text-decoration: none;
-        font-size: 18px; }
+        font-size: 16px; }
   .blog_list {
-    width: 650px;
-    padding-left: 15px; }
+    width: 690px;
+    padding-left: 42px; }
     .blog_list .prod-desc {
       padding: 0; }
     .blog_list .show-more {

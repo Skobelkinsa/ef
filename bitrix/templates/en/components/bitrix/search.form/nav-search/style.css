@@ -1,0 +1,42 @@
+.sear-block-global{
+    right: -4px;
+    top: 152px;
+    z-index: 5;
+}
+.icon-sear-block-global, .icon-sear-block-global svg{width:23px; height:23px; top: -2px; cursor:pointer; z-index:7}
+.sear-block-global input.search-suggest::placeholder{ color: #ffcc01}
+.sear-block-global input.search-suggest{ border:none;  padding:0 23px;  background:#2b2a29;  width:272px;  height:100%;  box-sizing:border-box; color: #fff}
+.sear-block-global input[type="submit"]{ width:40px;  height:100%;  box-sizing:border-box; opacity:0}
+.sear-block-global .search-form.actsh{ display:block;  -webkit-transform:scaleX(1);  transform:scaleX(1);  opacity:1}
+.sear-block-global .search-form{
+    z-index:1;  position:absolute;  top:-8px;  right:-9px;  height:35px;  background-color:#ebebeb;  width:272px}
+.icon-sear-block-global svg path{fill: #ffcc01}
+
+.nav-main__right .sear-block-global .search-form{
+    width: 220px;
+}
+.nav-main__right .sear-block-global input.search-suggest::placeholder{ color: #000}
+.nav-main__right .sear-block-global input.search-suggest{
+    width: 100% !important;
+    background-color: #ebebeb;
+    color: #000;
+}
+.nav-main .nav-main__left  li {
+    padding: 0 14px 0 0;
+}
+.nav-main .nav-main__left .sub li a {
+    letter-spacing: 1px;
+}
+.nav-main .nav-main__left .sub-menu > a {
+    background-position: 40px 10px; !important;
+}
+.nav-main__left .sub-menu{
+    right: 10px;
+    margin: 0;
+}
+.nav-main__right .sear-block-global{
+    position: absolute;
+    top: 0 !important;
+    right: 125px !important;
+}
+.nav-main__right .icon-sear-block-global svg path{fill: #000}

@@ -1,0 +1,124 @@
+div.bx-system-auth-form span.bx-auth-secure {background-color:#FFFAE3; border:1px solid #DEDBC8; padding:2px; display:inline-block; vertical-align:bottom; margin-top:-1px;}
+div.bx-system-auth-form div.bx-auth-secure-icon {background-image:url(images/sec.png); background-repeat:no-repeat; background-position:center; width:19px; height:18px;}
+div.bx-system-auth-form div.bx-auth-secure-unlock {background-image:url(images/sec-unlocked.png);}
+.main-auth-title {font-size:30px;margin-bottom:40px}
+
+.bx-system-auth-form input[type="submit"]{  color: #000;
+    background: #ffcc01;
+    border-radius: 3px;
+	font-size:14px;
+    right: 182px;
+    top: 35px;
+    padding: 12px 40px;
+	cursor:pointer;
+	border:none;
+	float:right;
+	}
+.enterlink-m {padding:40px 0;}
+.enterlink-m a {margin-right:15px}
+.bx-auth-serv-icons {text-align:center;}
+
+.form-block-quad .vkontakte {background-position: 0 0px}
+.form-block-quad .facebook {background-position:  -53px 0}
+.form-block-quad .openid-mail-ru {background-position: -106px 0}
+.form-block-quad .twitter {background-position: -159px 0}
+.form-block-quad .google {background-position: -212px 0}
+
+
+.form-block-quad .bx-ss-icon{width:43px; height:43px;background-repeat: no-repeat;}
+.form-block-quad .bx-auth-serv-icons a:hover {border-color: rgba(0, 0, 0, 0)}
+
+.form-block-quad .bx-ss-icon
+{
+background-image: url('data:image/png;base64,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');
+}
+
+.bx-system-auth-form .bx-auth .bx-auth-line,
+.block_auth_social .bx-ss-icon
+{display: none !important;}
+.bx-system-auth-form .bx-auth input[type="text"]{
+    height: auto;
+    margin: 0;
+    display: inline-block;
+}
+.bx-system-auth-form .bx-auth {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    bottom: 25px;
+}
+
+.bx-system-auth-form .bx-auth.social ul{
+    display: block;
+    margin: 15px 0 15px;
+}
+.bx-system-auth-form .bx-auth.social{
+    bottom: 0;
+    margin: 20px 0;
+}
+table.auth-table  tr  td {display: block}
+.auth-table .social ul li a img {
+    width:20px;
+    height:20px;
+}
+.order-auth > tr > td {
+    width: 300px;
+    margin: 0 90px;
+}
+#order_form_div .auth-table input[type="text"],
+#order_form_div .auth-table input[type="password"]
+{
+    height: 50px;
+    margin-bottom: 22px;
+    width: 100%;
+}
+#order_form_div .auth-table label {
+    color: #000;
+    font-size: 16px;
+    margin-left: 15px;
+    display:block;
+}
+input:-webkit-autofill{
+    box-shadow:inset 0 0 0 1000px #ebebeb !important;
+}
+.auth-table .checkbox {display: none;}
+.auth-table .checkbox-custom {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 0;
+    background-color: #ebebeb;
+    border-radius: 0;
+    margin-right: 10px;
+}
+.auth-table .checkbox-custom,
+.auth-table .label {
+    display: inline-block;
+    vertical-align: middle;
+}
+#order_form_div .auth-table label.rememberme {
+    margin: 30px 0;
+    display: inline-block;
+}
+.auth-table .forgot {margin-left: 15px;}
+.auth-table .checkbox:checked + .checkbox-custom::before {
+    content: "✔";
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 2px;
+    font-size: 20px;
+}
+.bx-system-auth-form .auth-table input[type="submit"]{
+    color: #000;
+    background: #ffcc01;
+    border-radius: 3px;
+    font-size: 24px;
+    padding: 12px 40px;
+    cursor: pointer;
+    border: none;
+    font-family: 'PT Sans',sans-serif;
+    margin: 0 auto;
+    display: block;
+    float: none;
+}

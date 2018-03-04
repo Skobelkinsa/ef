@@ -13,7 +13,7 @@ $(function () {
     $('.blog').on('click', '.show-more', function(e){
         $(this).remove();
         //делаем ajax запрос и сразу инкремент номера страницы
-        $.get(path, {PAGEN_1: ++currentPage}, function(data){
+        $.get(path, {PAGEN_1: ++currentPage, SECTION: $(this).data('section')}, function(data){
             //добавим новости к списку
             $(".blog .blog_list .prod-desc").before(data);
             if(currentPage * 9 >= count){
